@@ -5,7 +5,14 @@ Kelvin
 Created project
 
 23/09/2018
+
 Ryan
-Edited the original setup and draw methods in order for audio component to work.
-Added initialize method for global variables.
-Added import for beads library
+- Edited the original setup and draw methods in order for audio component to work.
+- Added initialize method for global variables.
+- Added import for beads library.
+
+24/09/2018
+
+Thomas 
+- Edited the next setup and drew new methods, such as lineGraph.
+- Moved around aspects such as Kelvin's draw method into the main "pieChart" method, to use draw() to call.
