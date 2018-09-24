@@ -1,0 +1,12 @@
+Interaction Design Assessment 2 Changelog
+
+20/09/2018
+Kelvin
+Created project
+
+23/09/2018
+
+Ryan
+Edited the original setup and draw methods in order for audio component to work.
+Added initialize method for global variables.
+Added import for beads library
