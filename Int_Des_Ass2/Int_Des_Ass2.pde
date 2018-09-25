@@ -19,7 +19,6 @@ void setup() {
 
 void initialize() {
   ac = new AudioContext();
-  audioPlayback();
   onSector = false;
 }
 
@@ -69,16 +68,16 @@ STUDENT NAME: THOMAS NGUYEN
  REFERENCES: 
  1. Processing Forum 2018, Array: line graph, 22nd September 2018, <https://forum.processing.org/one/topic/array-line-graph.html>.
  */
-void lineGraph(){
-  float[] seasonPos1 = {1,7,5,2,4};
-  stroke(255,0,0);
+void lineGraph() {
+  float[] seasonPos1 = {1, 7, 5, 2, 4};
+  stroke(255, 0, 0);
   strokeWeight(2);
   float lineWidth = (float) width/(seasonPos1.length);
   for (int i=0; i<seasonPos1.length-1; i++) {
     line(i*lineWidth+80, 50*seasonPos1[i]+120, (i+1)*lineWidth+80, 50*seasonPos1[i+1]+120); //x,y,x,y
   }
   textSize(32);
-  text("Final Season Position", 150,50);
+  text("Final Season Position", 150, 50);
 }
 
 //still WIP, adding more, but this is to display most of it. will add labels soon.
@@ -109,20 +108,22 @@ STUDENT NAME: RYAN BARRAGA
  1. freesound.org, 23 September 2018, <https://freesound.org>
  */
 void audioPlayback() {
-  if (onSector == true) {
-    String audioFileName = dataPath("open.wav");
-    SamplePlayer player = new SamplePlayer(ac, SampleManager.sample(audioFileName));
-    g = new Gain(ac, 2, 1);
-    g.addInput(player);
-    ac.out.addInput(g);
-    ac.start();
-  }
+  String audioFileName;
+  if (onSector == true) 
+    audioFileName = dataPath("open.wav");
+  else
+    audioFileName = dataPath("close.wav");
+  SamplePlayer player = new SamplePlayer(ac, SampleManager.sample(audioFileName));
+  g = new Gain(ac, 2, 1);
+  g.addInput(player);
+  ac.out.addInput(g);
+  ac.start();
 }
 
 void mouseClicked() {
   //WORK IN PROGRESS. Once interactive component is completed, code will be updated to make onSector more robust.
   //When mouse is on sector and clicked, a sound will play when expanding details.
-  onSector = true;
+  onSector = !onSector;
   audioPlayback();
 }
 /***************CODE ENDS HERE***************/
