@@ -15,3 +15,7 @@ Added import for beads library
 Thomas
 Edited the next setup and drew new methods, such as lineGraph.
 Moved around aspects such as Kelvin's draw method into the main "pieChart" method, to use draw() to call.
+
+25/09/2018
+Ryan
+Added closing audio feedback to project
