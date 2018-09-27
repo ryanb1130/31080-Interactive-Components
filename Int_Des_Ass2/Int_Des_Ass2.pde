@@ -23,7 +23,7 @@ void initialize() {
 }
 
 void draw() {
-  lineGraph(); //Thomas
+  lineGraph(); //THOMAS NGUYEN
   //pieChart(350, scores);
 }
 
@@ -69,15 +69,38 @@ STUDENT NAME: THOMAS NGUYEN
  1. Processing Forum 2018, Array: line graph, 22nd September 2018, <https://forum.processing.org/one/topic/array-line-graph.html>.
  */
 void lineGraph() {
-  float[] seasonPos1 = {1, 7, 5, 2, 4};
+
+  rect(97,170,400,350);
+  float[] seasonPos1 = {1, 8, 3, 2, 4};
   stroke(255, 0, 0);
   strokeWeight(2);
-  float lineWidth = (float) width/(seasonPos1.length);
+  float lineWidth = (float) width/2/(seasonPos1.length-1);
+  
   for (int i=0; i<seasonPos1.length-1; i++) {
-    line(i*lineWidth+80, 50*seasonPos1[i]+120, (i+1)*lineWidth+80, 50*seasonPos1[i+1]+120); //x,y,x,y
+    line(i*lineWidth+100, 50*seasonPos1[i]+120, (i+1)*lineWidth+100, 50*seasonPos1[i+1]+120);
+    fill(0);
+    text("20"+(i+11),i*lineWidth+100,seasonPos1[i]+550);//x,y,x,y
   }
+    
+  fill(0);  
   textSize(32);
   text("Final Season Position", 150, 50);
+  textSize(20);
+  text("(2011-2015)", 250, 80);
+  textSize(16);
+  text("Position", 0, 300);
+  text("Years", 280, 580);
+  textSize(11);
+  text("1st", 70, 175);
+  text("2nd", 70, 225);
+  text("3rd", 70, 275);
+  text("4th", 70, 325);
+  text("5th", 70, 375);
+  text("6th", 70, 425);
+  text("7th", 70, 475);
+  text("8th", 70, 525);
+  text("2015", lineWidth+340,550); 
+  
 }
 
 //still WIP, adding more, but this is to display most of it. will add labels soon.
