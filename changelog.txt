@@ -19,3 +19,7 @@ Moved around aspects such as Kelvin's draw method into the main "pieChart" metho
 25/09/2018
 Ryan
 Added closing audio feedback to project
+
+27/09/2018
+Thomas
+Added labels onto lineGraph method.
